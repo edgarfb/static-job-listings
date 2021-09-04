@@ -1,0 +1,15 @@
+.btn {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    margin: .5rem;
+    background-color: var(--filter);
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+.btn:hover {
+    color: white;
+    background-color: var(--primary);
+}

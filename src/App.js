@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import bgMobile from "./images/bg-header-mobile.svg";
+import "./App.css";
+import Card from "./components/Card";
+import dataJson from "./data.json";
 
 function App() {
+  const path = process.env.PUBLIC_URL;
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={bgMobile} className="App-logo" alt="logo" />
       </header>
+      {dataJson.map((data) => {
+        return (
+          <Card
+            logo={`${path}${data.logo}`}
+            key={data.id}
+            name={data.company}
+            position={data.position}
+            languages={data.languages}
+          />
+        );
+      })}
     </div>
   );
 }
