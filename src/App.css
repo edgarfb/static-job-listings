@@ -4,8 +4,19 @@
 
 header {
     background-color: var(--primary);
-    height: 158px;
+    background-image: url('./images/bg-header-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 157px;
 }
 img {
     width: 100%;
+}
+
+
+@media (min-width: 400px) {
+    header {
+        background-image: url('./images/bg-header-desktop.svg');
+       
+    }
 }

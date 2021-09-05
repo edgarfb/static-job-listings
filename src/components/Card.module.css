@@ -21,6 +21,10 @@ h2 {
     font-size: 1.1rem;
     color: var(--darkCyan);
 }
+h2:hover {
+    color: var(--primary);
+    cursor: pointer;
+}
 
 .moreInfo {
     color: var(--cyan);
