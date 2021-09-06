@@ -20,3 +20,10 @@ img {
        
     }
 }
+
+@media (min-width: 700px) {
+    .App {
+        width: 70%;
+        margin: 0 auto;
+    }
+}

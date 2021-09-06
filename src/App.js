@@ -2,27 +2,31 @@ import React from "react";
 import "./App.css";
 import Card from "./components/Card";
 import dataJson from "./data.json";
+import ButtonClose from "./components/UI/ButtonClose";
 
 function App() {
   const path = process.env.PUBLIC_URL;
   const [selectedTags, setSelectedTagsTags] = React.useState([]);
-  const [dataJsonFiltered, setDataJsonFilteded] = React.useState([]);
-  const clickTagHandler = (content) => {
+  const [companiesData, setCompaniesData] = React.useState([]);
+  
+  const clickTagHandler = (content, id) => {
+    if(selectedTags.includes(content)) {
+      return;
+    };
     setSelectedTagsTags((prevState) => {
-      return prevState.includes(content) ? prevState : [...prevState, content];
+      return [...prevState, content];
     });
-    if (!selectedTags.includes(content)) {
-      setDataJsonFilteded((prev) => {
-        let filtered = dataJson.filter(
-          (data) =>
-            data.languages.includes(content) ||
-            data.tools.includes(content) ||
-            data.position.includes(content)
-        );
-        return [...prev, ...filtered];
-      });
-    }
-  };
+    setCompaniesData(prev => {
+      let filtered = dataJson.filter(data => data.languages.includes(content) ||
+              data.tools.includes(content) ||
+              data.position.includes(content))
+      let test = filtered.filter(f => console.log('F',f));
+      
+      return [...prev, ...filtered];
+    }) 
+    
+  };    
+  
   const initialList = dataJson.map((data) => {
     const tags = [data.role, data.level, ...data.languages, ...data.tools];
 
@@ -38,7 +42,7 @@ function App() {
       />
     );
   });
-  const filteredList = dataJsonFiltered.map((data) => {
+  const companiesList = companiesData.map((data) => {
     const tags = [data.role, data.level, ...data.languages, ...data.tools];
 
     return (
@@ -56,10 +60,10 @@ function App() {
 
   return (
     <div className="App">
-      <div>{selectedTags}</div>
+      <div>{selectedTags.length > 0 && selectedTags.map(tag => <ButtonClose label={tag}/>)}</div>
       <header className="App-header"></header>
-      {selectedTags.length === 0 && initialList}
-      {dataJsonFiltered.length > 0 && filteredList}
+      {companiesData.length === 0 && initialList}
+      {companiesData.length > 0 && companiesList}
     </div>
   );
 }

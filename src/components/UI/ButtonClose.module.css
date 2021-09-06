@@ -1,0 +1,27 @@
+.btnClose {
+   
+    background-color: var(--filter);
+    display: inline-block;
+    border-radius: 6px;
+    margin: .5rem;
+}
+.btnClose span {
+    margin: 0 1rem;
+    color: var(--primary);
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary);
+    
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--darkCyan);
+    color: white;
+}
