@@ -5,7 +5,7 @@ const ButtonClose = (props) => {
     return (
         <div className={styles.btnClose}>
             <span>{props.label}</span>
-            <button className={styles.btn} onClick={props.onClick}>X</button>
+            <button className={styles.btn} onClick={() => props.onClick(props.label)}>X</button>
         </div>
     )
 }
