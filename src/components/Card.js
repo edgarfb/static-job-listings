@@ -26,7 +26,7 @@ function Card(props) {
 
       <div className={styles.tags}>
         {props.languages.map((lang) => {
-          return <Button onClick={() => props.onClickTag(lang, props.id)}>{lang}</Button>;
+          return <Button onClick={() => props.onClickTag(lang)}>{lang}</Button>;
         })}
       </div>
     </div>
