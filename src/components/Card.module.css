@@ -6,6 +6,16 @@
     box-shadow: 0px 2px 10px var(--primary);
     position: relative;
 }
+.cardShined {
+    min-width: 350px;
+    margin: 3rem 1rem;
+    background: white;
+    padding: 2rem 1rem;
+    box-shadow: 0px 2px 10px var(--primary);
+    position: relative;
+    border-left: 5px solid var(--primary);
+    border-radius: 6px;
+}
 .logo {
     width: 50px;
     position: absolute;

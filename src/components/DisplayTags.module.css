@@ -1,0 +1,23 @@
+.displayTags {
+    background: white;
+    position: relative;
+    /* opacity: .5; */
+    box-shadow: 0px 2px 10px var(--primary);
+    top: -30px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.clear {
+    color: var(--primary);
+    margin-right: 1rem;
+    
+}
+
+.clear:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

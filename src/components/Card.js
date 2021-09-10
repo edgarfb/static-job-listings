@@ -3,8 +3,9 @@ import styles from "./Card.module.css";
 import Button from "./UI/Button";
 
 function Card(props) {
+  const shineClass = props.new ? styles.cardShined : styles.card;
   return (
-    <div className={styles.card}>
+    <div className={shineClass}>
       <div className={styles.logo}>
         <img src={props.logo} alt={`${props.company} Logo`} />
       </div>

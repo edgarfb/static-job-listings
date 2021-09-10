@@ -1,14 +1,13 @@
 import React from 'react'
 import styles from './DisplayTags.module.css';
 
-function DisplayTags() {
+function DisplayTags(props) {
     
-    const addTagsHandler = () => {
-
-    }
+   
     return (
-        <div>
-            
+        <div className={styles.displayTags}>
+           <div>{props.children} </div>
+           {props.selectedTags.length > 0 && <div className={styles.clear} onClick={props.onClear}>clear</div>}
         </div>
     )
 }
