@@ -4,6 +4,7 @@
     display: inline-block;
     border-radius: 6px;
     margin: .5rem;
+    font-size: .8rem;
 }
 .btnClose span {
     margin: 0 1rem;
@@ -11,7 +12,7 @@
 }
 
 .btn {
-    padding: 1rem;
+    padding: .5rem;
     border-radius: 0 6px 6px 0;
     border: none;
     cursor: pointer;
@@ -24,4 +25,14 @@
     cursor: pointer;
     background-color: var(--darkCyan);
     color: white;
+}
+
+@media (min-width: 700px) { 
+    .btnClose {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 1rem;
+    }
 }

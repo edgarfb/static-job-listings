@@ -26,7 +26,13 @@ img {
 
 @media (min-width: 700px) {
     main {
-        width: 70%;
+        /* width: 90%; */
+        margin: 0 auto;
+    }
+}
+@media (min-width: 1024px) {
+    main {
+        width: 80%;
         margin: 0 auto;
     }
 }

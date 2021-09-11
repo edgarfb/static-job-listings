@@ -1,5 +1,6 @@
 .btn {
     padding: .5rem 1rem;
+    font-size: .8rem;
     border: none;
     border-radius: 6px;
     margin: .5rem;
@@ -12,4 +13,10 @@
 .btn:hover {
     color: white;
     background-color: var(--primary);
+}
+
+@media (min-width: 700px) {
+    .btn {
+        font-size: 1rem;
+    }
 }
