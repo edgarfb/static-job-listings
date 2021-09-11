@@ -22,6 +22,18 @@
     top: -25px;
     left: 10px;
 }
+.titleTag {
+    background-color: var(--darkCyan);
+    border-radius: 1rem;
+    margin: 0 .5rem;
+    padding: .5rem 1rem;
+    font-size: .7rem;
+    color: white;
+}
+.titleTag:first-child {
+    margin-left: 1rem;
+    background-color: var(--primary);
+}
 .dot {
     margin: 0 1rem;
     font-size: 1rem;

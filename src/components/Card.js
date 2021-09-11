@@ -11,8 +11,8 @@ function Card(props) {
       </div>
       <h3>
         {props.name}
-        {/* <span>New</span>
-        <span>FEATURED</span> */}
+        {props.new && <span className={styles.titleTag}>New!</span>}
+        {props.featured && <span className={styles.titleTag}>FEATURED</span>}
       </h3>
       <h2>{props.position}</h2>
       <div className={styles.moreInfo}>
