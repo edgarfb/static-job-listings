@@ -1,6 +1,9 @@
 .App {
     background-color: var(--bg);
 }
+main {
+    min-height: 100vh;
+}
 
 header {
     background-color: var(--primary);
@@ -22,7 +25,7 @@ img {
 }
 
 @media (min-width: 700px) {
-    .App {
+    main {
         width: 70%;
         margin: 0 auto;
     }

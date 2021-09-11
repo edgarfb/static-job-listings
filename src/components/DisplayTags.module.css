@@ -1,7 +1,11 @@
+.displayTagsHide {
+    visibility: hidden;
+    height: 59px;
+}
+
 .displayTags {
     background: white;
     position: relative;
-    /* opacity: .5; */
     box-shadow: 0px 2px 10px var(--primary);
     top: -30px;
     border-radius: 6px;
