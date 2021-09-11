@@ -22,6 +22,11 @@
     top: -25px;
     left: 10px;
 }
+.dot {
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
 
 h3 {
     color: var(--primary);
@@ -47,6 +52,7 @@ h2:hover {
 .moreInfo__inner {
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 

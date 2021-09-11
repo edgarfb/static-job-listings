@@ -3,7 +3,7 @@ import styles from "./Card.module.css";
 import Button from "./UI/Button";
 
 function Card(props) {
-  const shineClass = props.new ? styles.cardShined : styles.card;
+  const shineClass = props.featured ? styles.cardShined : styles.card;
   return (
     <div className={shineClass}>
       <div className={styles.logo}>
@@ -18,9 +18,9 @@ function Card(props) {
       <div className={styles.moreInfo}>
         <div className={styles.moreInfo__inner}>
           <span>1d ago</span>
-          <span>.</span>
+          <span className={styles.dot}>.</span>
           <span>Full time</span>
-          <span>.</span>
+          <span className={styles.dot}>.</span>
           <span>USA only</span>
         </div>
       </div>

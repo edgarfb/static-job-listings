@@ -68,7 +68,7 @@ function App() {
       {companiesData.map(data => {
         const tags = [data.role, data.level, ...data.languages, ...data.tools];
         return <Card
-                  new={data.new}
+                  featured={data.featured}
                   onClickTag={clickTagHandler}
                   logo={`${path}${data.logo}`}
                   key={data.id}
