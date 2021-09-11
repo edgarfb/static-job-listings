@@ -3,23 +3,27 @@ import "./App.css";
 import Card from "./components/Card";
 import dataJson from "./data.json";
 import ButtonClose from "./components/UI/ButtonClose";
-import { getRoles } from "@testing-library/dom";
 import DisplayTags from "./components/DisplayTags";
 
-
-
-
-
-
-
 function App() {
+  // paths to load logos
   const path = process.env.PUBLIC_URL;
   const [selectedTags, setSelectedTagsTags] = React.useState([]);
-  const [companiesData, setCompaniesData] = React.useState([...dataJson]);
+  const [companiesData, setCompaniesData] = React.useState([]);
   
-  
+  // This little guy makes the magic :)
+  const filterCompanies = () => {
+    let companies = dataJson;
+    selectedTags.forEach(tag => {
+      companies = companies.filter(data =>  data.role === tag || data.level ===  tag || data.languages.includes(tag) || data.tools.includes(tag))
+    })
+    return companies;
+  }
+
+  React.useEffect(()=> setCompaniesData(filterCompanies()), [selectedTags])
+
   const selectTagHandler = (target) => {
-    
+    // create an array with the target on each click
     if(selectedTags.includes(target)) {
       return;
     };
@@ -30,36 +34,30 @@ function App() {
     
   };
 
- 
-
   const clickTagHandler = (target) => {
     selectTagHandler(target);
-    setCompaniesData((prev) => {
-      return [...prev.filter(data => data.role === target || data.level ===  target || data.languages.includes(target) || data.tools.includes(target))];
-    })
   }
 
   const btnCloseHandler = (target) => {
+    // Close and remove the tag-btn
     setSelectedTagsTags(prev => {
       return prev.filter(p => p !== target);
     });
   }
 
   const clearTagsHandler = () => {
+    // reset the selectedTags state
     setSelectedTagsTags(prev => {
       return [];
     })
+    // reset the companiesData state
     setCompaniesData(prev => {
       return [...dataJson];
     })
   }
   
-  
- 
-
   return (
     <div className="App">
-      {/* <div>{selectedTags.length > 0 && selectedTags.map(tag => <ButtonClose onClick={btnCloseHandler} label={tag}/>)}</div> */}
       <header className="App-header">
         
       </header>
@@ -73,7 +71,6 @@ function App() {
                   new={data.new}
                   onClickTag={clickTagHandler}
                   logo={`${path}${data.logo}`}
-                  id={data.id}
                   key={data.id}
                   name={data.company}
                   position={data.position}
